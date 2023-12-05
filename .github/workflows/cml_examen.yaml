@@ -1,0 +1,24 @@
+name: model-supervisé RL
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: docker://dvcorg/cml-py3:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: cml_run
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Your ML workflow goes here
+          pip install -r requirements.txt
+          Notebook_Examen_Mlflow_Mehdi.ipynb
+          # Write your CML report
+          echo "## Metriques:" >> reports.md
+          cat metrics.txt >> reports.md
+          # data à rajouter pour connecter github
+          git config --global user.email "mehdi.belamine@gmail.com"
+          git config --global user.name "BMandI"
+          git add reports.md metrics.txt
+          git commit -m "pousser vers github repository"
+          git push origin HEAD:main
