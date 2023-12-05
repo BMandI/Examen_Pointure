@@ -16,7 +16,7 @@ jobs:
           # Write your CML report
           echo "## Metriques:" >> reports.md
           cat metrics.txt >> reports.md
-          # data à rajouter pour connecter github
+          # data à rajouter pour connecter github-----------
           git config --global user.email "mehdi.belamine@gmail.com"
           git config --global user.name "BMandI"
           git add reports.md metrics.txt
