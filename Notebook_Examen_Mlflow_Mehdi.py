@@ -65,9 +65,6 @@ print("recall_score: %s" % recall_score)
 print("f1_score: %s" % f1_score)
 
 mlflow.log_metric("accuracy", accuracy)
-
-
-
 mlflow.log_metric("recall_score", recall_score)
 mlflow.log_metric("f1_score", f1_score)
 
