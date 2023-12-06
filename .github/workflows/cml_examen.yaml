@@ -10,7 +10,7 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Your ML workflow goes here
+          # Your ML workflow goes here------
           pip install -r requirements.txt
           Notebook_Final.py
           # Write your CML report
